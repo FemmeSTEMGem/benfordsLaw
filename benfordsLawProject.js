@@ -16,8 +16,6 @@ function lawCalculator(a) {
   return a.sort().map(x => {
     for (let i = 1; i < 10; count = 0) {
       let count = 0
-      
-
     }})
 }
 
