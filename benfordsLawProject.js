@@ -13,10 +13,16 @@ let array = [345, 45, 3, 87, 246, 5, 457, 120, 436, 135, 436, 235, 87, 3457, 358
 
 function lawCalculator(a) {
   calculatorArray = []
-  return a.sort().map(x => {
-    for (let i = 1; i < 10; count = 0) {
-      let count = 0
-    }})
+  a.sort().forEach(x => {
+    let count = 0
+    for (let i = 1; i < 10; count++) {
+      if (parseInt(x.toString().split('')[0]) == i) {
+        calculatorArray.push(i)
+      }
+      i++
+    }
+  })
+  return calculatorArray
 }
 
 console.log(lawCalculator(array))
