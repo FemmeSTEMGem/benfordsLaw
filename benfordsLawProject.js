@@ -26,3 +26,5 @@ function lawCalculator(a) {
 }
 
 console.log(lawCalculator(array))
+
+//Discovered the issue - I think the .forEach loop needs to be inside the for loop...rather than the for loop being inside the .forEach loop. Right now, the for loop is running on the first element in the array over and over again until the for loop ends. Then we go to the next element in the array and run the for loop over and over until the loop ends. If we switch what's nested in what, I think that'll fix the problem
