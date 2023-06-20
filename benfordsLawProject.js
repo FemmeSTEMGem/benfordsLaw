@@ -28,3 +28,7 @@ function lawCalculator(a) {
 console.log(lawCalculator(array))
 
 //Discovered the issue - I think the .forEach loop needs to be inside the for loop...rather than the for loop being inside the .forEach loop. Right now, the for loop is running on the first element in the array over and over again until the for loop ends. Then we go to the next element in the array and run the for loop over and over until the loop ends. If we switch what's nested in what, I think that'll fix the problem
+
+// Better than the above, I think tracking via Objects would be better
+
+// After chatting with Danny, there's a method called "count" that would literally do what I need, lol - I'll play around with both Object and "count" (or maybe both) and see which is better suited
