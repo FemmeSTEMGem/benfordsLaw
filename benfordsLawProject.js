@@ -9,25 +9,59 @@
 // 8 	             5.1% 	
 // 9 	             4.6%
 
+//Discovered an issue - I think the .forEach loop needs to be inside the for loop...rather than the for loop being inside the .forEach loop. Right now, the for loop is running on the first element in the array over and over again until the for loop ends. Then we go to the next element in the array and run the for loop over and over until the loop ends. If we switch what's nested in what, I think that'll fix the problem
+// Keeping the below function around but commented out in case "count" and Object are bad ideas
+
+// function lawCalculator(a) {
+//   calculatorArray = []
+//   a.sort().forEach(x => {
+//     let count = 0
+//     for (let i = 1; i < 10; count++) {
+//       if (parseInt(x.toString().split('')[0]) == i) {
+//         calculatorArray.push(i)
+//       }
+//       i++
+//     }
+//   })
+//   return calculatorArray
+// }
+
+// Keeping this function because it's currently the closest iteration. I'm going to try switching up the "if" statement but I want to keep this previous version in case it doesn't work.
+// function lawCalculator(a) {
+//   let resultsObject = {}
+//   let count = 0
+//   for (let i = 1; i < 10; count++) {
+//     a.sort().forEach(x => {
+//       if (parseInt(x.toString().split('')[0]) == i || !resultsObject[i]) {
+//         resultsObject[i] = 1
+//       }
+//       resultsObject[i] + 1
+//     })
+//     i++
+//   }
+//   return resultsObject
+// }
+
 let array = [345, 45, 3, 87, 246, 5, 457, 120, 436, 135, 436, 235, 87, 3457, 358, 2176, 698]
 
+
 function lawCalculator(a) {
-  calculatorArray = []
-  a.sort().forEach(x => {
-    let count = 0
-    for (let i = 1; i < 10; count++) {
-      if (parseInt(x.toString().split('')[0]) == i) {
-        calculatorArray.push(i)
+  let resultsObject = {}
+  let count = 0
+  for (let i = 1; i < 10; count++) {
+    a.sort().forEach(x => {
+      if (parseInt(x.toString().split('')[0]) == i || !resultsObject[i]) {
+        resultsObject[i] = 1
       }
-      i++
-    }
-  })
-  return calculatorArray
+      resultsObject[i] + 1
+    })
+    i++
+  }
+  return resultsObject
 }
 
-console.log(lawCalculator(array))
+lawCalculator(array)
 
-//Discovered the issue - I think the .forEach loop needs to be inside the for loop...rather than the for loop being inside the .forEach loop. Right now, the for loop is running on the first element in the array over and over again until the for loop ends. Then we go to the next element in the array and run the for loop over and over until the loop ends. If we switch what's nested in what, I think that'll fix the problem
 
 // Better than the above, I think tracking via Objects would be better
 
