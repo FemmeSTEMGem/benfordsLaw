@@ -9,60 +9,24 @@
 // 8 	             5.1% 	
 // 9 	             4.6%
 
-//Discovered an issue - I think the .forEach loop needs to be inside the for loop...rather than the for loop being inside the .forEach loop. Right now, the for loop is running on the first element in the array over and over again until the for loop ends. Then we go to the next element in the array and run the for loop over and over until the loop ends. If we switch what's nested in what, I think that'll fix the problem
-// Keeping the below function around but commented out in case "count" and Object are bad ideas
-
-// function lawCalculator(a) {
-//   calculatorArray = []
-//   a.sort().forEach(x => {
-//     let count = 0
-//     for (let i = 1; i < 10; count++) {
-//       if (parseInt(x.toString().split('')[0]) == i) {
-//         calculatorArray.push(i)
-//       }
-//       i++
-//     }
-//   })
-//   return calculatorArray
-// }
-
-// Keeping this function because it's currently the closest iteration. I'm going to try switching up the "if" statement but I want to keep this previous version in case it doesn't work.
-// function lawCalculator(a) {
-//   let resultsObject = {}
-//   let count = 0
-//   for (let i = 1; i < 10; count++) {
-//     a.sort().forEach(x => {
-//       if (parseInt(x.toString().split('')[0]) == i || !resultsObject[i]) {
-//         resultsObject[i] = 1
-//       }
-//       resultsObject[i] + 1
-//     })
-//     i++
-//   }
-//   return resultsObject
-// }
+// After chatting with Danny, there's a method called "count" that would literally do what I need, lol - I'll play around with both Object and "count" (or maybe both) and see which is better suited
 
 let array = [345, 45, 3, 87, 246, 5, 457, 120, 436, 135, 436, 235, 87, 3457, 358, 2176, 698]
-
+// sortedArray = [120, 135, 2176, 235, 246, 3, 345, 3457, 358, 436, 436, 45, 457, 5, 698, 87, 87]
 
 function lawCalculator(a) {
   let resultsObject = {}
-  let count = 0
-  for (let i = 1; i < 10; count++) {
+
+  for (let i = 1; i < 10; i++) {
     a.sort().forEach(x => {
-      if (parseInt(x.toString().split('')[0]) == i || !resultsObject[i]) {
-        resultsObject[i] = 1
+      if (parseInt(x.toString().split('')[0]) == i) {
+        resultsObject[i] = (resultsObject[i]+1) || 1
       }
-      resultsObject[i] + 1
     })
-    i++
   }
   return resultsObject
 }
 
-lawCalculator(array)
+console.log(lawCalculator(array))
 
-
-// Better than the above, I think tracking via Objects would be better
-
-// After chatting with Danny, there's a method called "count" that would literally do what I need, lol - I'll play around with both Object and "count" (or maybe both) and see which is better suited
+// It works! Now I just need one more condition for times when there are no values starting with a number (in the array I have above, there's no 7s or 9s - still need to create a key-value pair that will reflect a zero value)
