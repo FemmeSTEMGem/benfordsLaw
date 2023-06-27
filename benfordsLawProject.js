@@ -50,3 +50,8 @@ function lawCalculator(a) {
 
 
 console.log(lawCalculator(benfordsArray))
+
+// Step One: Create front-end which demonstrates Benford's Law
+// Step Two: Update to include user-inputs
+// Step Three: Reverse-engineer the backend to create data that follows Benford's Law
+// Step Four: Update user-input mode so that you can see the percentage of distribution in addition to true/false
