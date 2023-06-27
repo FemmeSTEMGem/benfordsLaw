@@ -29,4 +29,7 @@ function lawCalculator(a) {
 
 console.log(lawCalculator(array))
 
+//! Ammendment to the point below - And I can't believe that I didn't think of this until now...I don't need to create the keys as I go because I already know what they're going to be. I can just loop through and add values to the keys as I go. -_-
+
+
 // It works! Now I just need one more condition for times when there are no values starting with a number (in the array I have above, there's no 7s or 9s - still need to create a key-value pair that will reflect a zero value - unlikely that this would ever come up, but important to cover all the bases)
