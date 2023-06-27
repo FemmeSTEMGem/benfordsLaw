@@ -26,13 +26,10 @@ function lawCalculator(a) {
     '8': 0,
     '9': 0
   }
-  for (let i = 1; i < 10; i++) {
-    a.sort().forEach(x => {
-      if (parseInt(x.toString().split('')[0]) == i) {
-        resultsObject[i] += 1
-      }
+    a.forEach(x => {
+      let key = parseInt(x.toString().split('')[0])
+      resultsObject[key] += 1
     })
-  }
   return resultsObject
 }
 
