@@ -15,12 +15,21 @@ let array = [345, 45, 3, 87, 246, 5, 457, 120, 436, 135, 436, 235, 87, 3457, 358
 // sortedArray = [120, 135, 2176, 235, 246, 3, 345, 3457, 358, 436, 436, 45, 457, 5, 698, 87, 87]
 
 function lawCalculator(a) {
-  let resultsObject = {}
-
+  let resultsObject = {
+    '1': 0,
+    '2': 0,
+    '3': 0,
+    '4': 0,
+    '5': 0,
+    '6': 0,
+    '7': 0,
+    '8': 0,
+    '9': 0
+  }
   for (let i = 1; i < 10; i++) {
     a.sort().forEach(x => {
       if (parseInt(x.toString().split('')[0]) == i) {
-        resultsObject[i] = (resultsObject[i]+1) || 1
+        resultsObject[i] += 1
       }
     })
   }
@@ -28,8 +37,3 @@ function lawCalculator(a) {
 }
 
 console.log(lawCalculator(array))
-
-//! Ammendment to the point below - And I can't believe that I didn't think of this until now...I don't need to create the keys as I go because I already know what they're going to be. I can just loop through and add values to the keys as I go. -_-
-
-
-// It works! Now I just need one more condition for times when there are no values starting with a number (in the array I have above, there's no 7s or 9s - still need to create a key-value pair that will reflect a zero value - unlikely that this would ever come up, but important to cover all the bases)
