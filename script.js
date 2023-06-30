@@ -52,8 +52,9 @@ function lawCalculator(a) {
 console.log(lawCalculator(benfordsArray))
 console.log(lawCalculator(randomArray))
 
-// Step Two: Update to include user-inputs - results will be displayed on the next page
+// Next: Update to take user-inputs - results will be displayed on the next page
     // --> Do a little digging on Express to re-remember how to route requests and start building them
-  // Next page will generate a report showing the numbers they entered with a graph showing their distribution next to a Benford's Law distribution
-// Step Three: Reverse-engineer the backend to create data that follows Benford's Law
-// Step Four: Update user-input mode so that you can see the percentage of distribution in addition to true/false
+  // Page will generate a report showing the numbers they entered with a graph showing their distribution next to (or layered with?) a Benford's Law distribution (maybe do a chart before a graph?...or is that creating too much extra work?)
+
+// Scope Expansion:
+// Reverse-engineer the backend to create data that follows Benford's Law
