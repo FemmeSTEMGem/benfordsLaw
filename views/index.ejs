@@ -9,9 +9,9 @@
 <body>
   Benford's Law
   <!-- Box and button-->
-  <input type="text">
-  <input type="submit" value="Submit">
-  <!-- Result -->
-  <script src="../utils/mathUtils.js"></script>
+  <form action="/process" method="POST">
+    <input type="text" name="userInput" required>
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
