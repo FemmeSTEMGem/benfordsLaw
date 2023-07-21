@@ -1,3 +1,5 @@
+//! Initial attempt to delete routes folder resulted in an error message upon loading the main page. Use ChatGPT to determine the cause. Obviously a routing issue, just gotta pinpoint it. Also worth noting, in an attempt to isolate the problem myself first, I commented out a few pre-existing lines of code in app.js. I doubt very much that they'll need to be used, but worth mentioning just in case it's relevant later.
+
 var express = require('express');
 var router = express.Router();
 
