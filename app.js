@@ -4,8 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// var indexRouter = require('./routes/index');
+// var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -19,8 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -36,6 +36,36 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+
+/* GET */
+
+// Route to display the home page
+app.get('/', (req, res, next) => {
+  res.render('index');
+});
+
+// Route to display the result on a new page
+app.get('/result', (req, res) => {
+  const result = req.query.output; // Get the result from the query parameter
+
+  // Render the result view with the data
+  res.render('result', { result });
+});
+
+
+/* POST */
+
+// Handling user submission
+app.post('/process', (req, res) => {
+  const userInput = req.body.userInput; // Get the input from the request body
+
+  // Call your function to process the user input
+  const result = lawCalculator(userInput);
+
+  // Redirect to the new page with the result
+  res.redirect(`/result?output=${encodeURIComponent(result)}`);
 });
 
 module.exports = app;
