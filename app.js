@@ -39,7 +39,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-/* GET */
+// /* GET */
 
 // Route to display the home page
 app.get('/', (req, res, next) => {
