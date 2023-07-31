@@ -11,7 +11,7 @@ let resultsObject = {
 }
 
 function count(a) {
-  a.forEach(x => {
+  [a].forEach(x => {
     let key = parseInt(x.toString().split('')[0])
     resultsObject[key] += 1
   })
@@ -30,4 +30,8 @@ function lawCalculator(a) {
     key["7"] / d > 0.04 && key["7"] / d < 0.08 &&
     key["8"] / d > 0.03 && key["8"] / d < 0.07 &&
     key["9"] / d > 0.03 && key["9"] / d < 0.07
+}
+
+module.exports = {
+  lawCalculator
 }
