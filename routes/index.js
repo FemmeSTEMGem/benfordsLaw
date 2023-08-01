@@ -25,7 +25,7 @@ router.get('/result', (req, res) => {
 router.post('/process', (req, res) => {
   const userInput = req.body.userInput; // Get the input from the request body
   // Call your function to process the user input
-  const result = lawCalculator([userInput]);
+  const result = lawCalculator(userInput.split(", ").map(x => parseInt(x)));
   // Redirect to the new page with the result
   res.redirect(`/result?output=${encodeURIComponent(result)}`);
 });
