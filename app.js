@@ -45,7 +45,7 @@ module.exports = app;
 //     Displaying First-Digit Distribution Graphs:
 //         Difficulty: Moderate
 //         Description: This feature involves generating graphs to visualize the first-digit distribution of the user's input data and comparing it with Benford's Law distribution.
-//         Required Skills: You'll need to work with data visualization libraries like Chart.js or D3.js to create the graphs. Familiarity with HTML, CSS, and JavaScript is necessary to integrate and customize the graphs on the webpage.
+//         Required Skills: You'll need to work with data visualization libraries like ***Chart.js*** or D3.js to create the graphs. Familiarity with HTML, CSS, and JavaScript is necessary to integrate and customize the graphs on the webpage.
 //         Benefits: Visualizing the data with graphs will provide users with a better understanding of the distribution and how it compares to Benford's Law.
 
 //     Adjustable Sensitivity of the Law Calculator:
