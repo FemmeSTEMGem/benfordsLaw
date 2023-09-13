@@ -13,15 +13,13 @@
         </p>
       </div>
       <div class="col">
-        <img src="images/graph.png" alt="Description of the image" class="img-fluid">
+        <img src="images/graph.png" alt="A bar graph showing percentages on the y-axis and numbers 1 through 9 on the x-axis. The bar gradually slopes downwards from 1 occurring 30% of the time and 9 ocurring less than 5% of the time." class="img-fluid">
       </div>
     </div>
-    <div class="row">
-        <form action="/process" method="POST" class="mb-3 translate-middle w-75 h-100">
-          <input type="text" name="userInput" class="form-control" placeholder="Add a bunch of numbers here to see if they conform to Benford's Law - all you need is a space between each number" required>
-          <button type="submit" class="mt-2">Submit</button>
-        </form>
-    </div>
+    <form action="/process" method="POST" class="mb-3 mt-3">
+      <input type="text" name="userInput" class="form-control" placeholder="Add a bunch of numbers here to see if they conform to Benford's Law - all you need is a space between each number" required>
+      <button type="submit" class="mt-2">Submit</button>
+    </form>
   </div>
 
 <%- include ('footer') %>
