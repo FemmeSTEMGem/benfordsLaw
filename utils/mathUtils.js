@@ -1,20 +1,21 @@
-let resultsObject = {
-  '1': 0,
-  '2': 0,
-  '3': 0,
-  '4': 0,
-  '5': 0,
-  '6': 0,
-  '7': 0,
-  '8': 0,
-  '9': 0
-}
-
 function count(a) {
+  let resultsObject = {
+    '1': 0,
+    '2': 0,
+    '3': 0,
+    '4': 0,
+    '5': 0,
+    '6': 0,
+    '7': 0,
+    '8': 0,
+    '9': 0
+  }
+  
   a.forEach(x => {
     let key = parseInt(x.toString().split('')[0])
     resultsObject[key] += 1
   })
+  console.log(resultsObject)
   return resultsObject
 }
 
@@ -31,6 +32,7 @@ function lawCalculator(a) {
     key["8"] / d > 0.03 && key["8"] / d < 0.07 &&
     key["9"] / d > 0.03 && key["9"] / d < 0.07
 }
+
 
 let randomArrayWithCommas = [
   345, 45, 3, 87, 246, 5, 457, 120, 436, 135, 436, 235, 87, 3457, 358, 2176, 698
