@@ -15,6 +15,7 @@ function count(a) {
     let key = parseInt(x.toString().split('')[0])
     resultsObject[key] += 1
   })
+  console.log(resultsObject)
   return resultsObject
 }
 
