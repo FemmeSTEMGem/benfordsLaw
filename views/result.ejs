@@ -8,14 +8,16 @@
     </div>
     <script>
       const ctx = document.getElementById('myChart');
+
+      const resultObj = <%= JSON.stringify(resultObj) %>;
     
       new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: Object.keys(resultsObj),
           datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Your results',
+            data: Object.values(resultObj),
             borderWidth: 1
           }]
         },
